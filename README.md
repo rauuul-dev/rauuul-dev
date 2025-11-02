@@ -14,11 +14,15 @@
 
 <p align="center">
   <!-- Card de estadísticas -->
-  <img width="48%" height="200" src="https://github-readme-stats-theta-umber-95.vercel.app/api?username=RauuulDev&show_icons=true&count_private=true&theme=radical&locale=es&bg_color=30,e96443,904e95&title_color=ffffff&text_color=ffffff&icon_color=f8d847" />
+  <img width="48%" height="200" style="object-fit: cover;" src="https://github-readme-stats-theta-umber-95.vercel.app/api?username=RauuulDev&show_icons=true&count_private=true&include_all_commits=true&theme=radical&locale=es&bg_color=30,e96443,904e95&title_color=ffffff&text_color=ffffff&icon_color=f8d847" />
 
   <!-- Card de lenguajes -->
   <img width="48%" height="200" style="object-fit: cover;" src="https://github-readme-stats-theta-umber-95.vercel.app/api/top-langs/?username=RauuulDev&layout=compact&card_width=400&theme=radical&locale=es&bg_color=30,e96443,904e95&title_color=ffffff&text_color=ffffff" />
 </p>
+
+
+
+
 
 
 
