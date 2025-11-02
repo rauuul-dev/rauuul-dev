@@ -1,5 +1,7 @@
-<h2 align="left">Hi 👋! My name is Raül and I'm a Junior Dev from Barcelona, Spain.</h2>
-
+<div align="center">
+<h1 align="center">Hola, soy <a href="https://rauuul.xyz">RauuulDev</a> 👋</h1>
+</div>
+<img src="https://i.imgur.com/YABwUVV.png">
 ###
 
 <div align="center">
