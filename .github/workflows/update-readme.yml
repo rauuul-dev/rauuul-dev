@@ -1,0 +1,60 @@
+name: Generate GitHub Stats
+
+on:
+  schedule: # ejecuta cada 12 horas
+    - cron: "0 */12 * * *"
+
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install github-readme-stats
+        run: npm install github-readme-stats
+
+      - name: Generate stats images
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          mkdir -p dist
+          npx github-readme-stats \
+            --username rauuul-dev \
+            --count_private true \
+            --theme dracula \
+            --hide_border false \
+            --disable_animations false \
+            --output dist/stats.svg
+
+          npx github-readme-stats \
+            --username rauuul-dev \
+            --top-langs \
+            --layout compact \
+            --theme dracula \
+            --hide_border false \
+            --langs_count 5 \
+            --output dist/languages.svg
+
+      - name: Push stats to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
